@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Restore sln
+      - dotnet restore WebApplication4.sln
+  build:
+    commands:
+      - echo Run unit test
+      - dotnet test WebApplication4UnitTest/WebApplication4UnitTest.csproj
+cache:
+    paths:
+        - '~/.nuget/packages'
